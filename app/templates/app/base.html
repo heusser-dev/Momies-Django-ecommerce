@@ -1,0 +1,62 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.5/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.5/dist/sweetalert2.min.js"></script>
+
+<div class="bg-danger">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-danger "
+    style="position: fixed; z-index: 1000; width: 100%; background-color: white; ">
+    <div class="container-fluid bg-danger">
+      <a class="navbar-brand fw-bold text-warning" href="{% url 'home' %}">
+        <img src="https://1000marcas.net/wp-content/uploads/2019/11/McDonalds-logo.png" width="290px"
+          height="90px"></img>
+        <span>Momies</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-warning fw-bold" aria-current="page" href="{% url 'pedido' %}">Comandas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-warning fw-bold" aria-current="page"
+              href="{% url 'promociones' %}">Promociones</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggl text-warning fw-bold" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Menu
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item fw-bold text-warning" href="/listar_productos?categoria_id=1">Hamburguesas</a>
+              </li>
+              <li><a class="dropdown-item fw-bold text-warning" href="/listar_productos?categoria_id=3">Churrascos</a>
+              </li>
+              <li><a class="dropdown-item  fw-boldtext-warning" href="/listar_productos?categoria_id=2">Papas y
+                  otros</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  {% block content %}{% endblock %}

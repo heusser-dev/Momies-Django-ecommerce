@@ -1,0 +1,61 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- lista_pedidos.html -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lista de Pedidos</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <h2 class="">Pedidos</h2>
+
+            {% for pedido in pedidos %}
+            <div class="card mb-3" style="max-width: 600px;">
+                <div class="card-body">
+                    <h2 class="card-title">Fecha del Pedido: {{ pedido.fecha_pedido }}</h2>
+                    <p class="card-text"><strong>Dirección de Entrega:</strong> {{ pedido.direccion_entrega }}</p>
+                    <p class="card-text"><strong>Nombre Cliente</strong> {{ pedido.nombre_cliente }}</p>
+                    <p class="card-text"><strong>Estado:</strong> {{ pedido.estado }}</p>
+                    <p class="card-text"><strong>Productos:</strong></p>
+                    <ul class="list-group">
+                        {% for producto in pedido.productos.all %}
+                        <li class="list-group-item">{{ producto.nombre }} - Precio: ${{ producto.precio }}</li>
+                        {% endfor %}
+                    </ul>
+                    <form method="post" action="{% url 'cambiar_estado_pedido' pedido.id %}">
+                        {% csrf_token %}
+                        <select class="form-select" name="nuevo_estado">
+                            {% for choice in pedido.ESTADOS_PEDIDO %}
+                                <option value="{{ choice.0 }}" {% if choice.0 == pedido.estado %}selected{% endif %}>
+                                    {{ choice.1 }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit" class="btn btn-primary">Cambiar Estado</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+{% endblock %}

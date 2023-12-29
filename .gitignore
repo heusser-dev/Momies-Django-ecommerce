@@ -1,0 +1,15 @@
+
+/app/__pycache__/
+
+/tecnomarket/__pycache__/
+app/migrations/0010_alter_producto_precio_carrito.py
+app/migrations/__pycache__/0001_initial.cpython-311.pyc
+app/migrations/__pycache__/0002_pedido.cpython-311.pyc
+app/migrations/__pycache__/0003_alter_categoria_descuento.cpython-311.pyc
+app/migrations/__pycache__/0004_pedido_estado.cpython-311.pyc
+app/migrations/__pycache__/0005_producto_imagen.cpython-311.pyc
+app/migrations/__pycache__/0006_alter_producto_precio.cpython-311.pyc
+app/migrations/__pycache__/0007_producto_tipo_hamburguesa.cpython-311.pyc
+app/migrations/__pycache__/0008_producto_cantidad.cpython-311.pyc
+app/migrations/__pycache__/0009_producto_comentario.cpython-311.pyc
+app/migrations/__pycache__/0010_alter_producto_precio_carrito.cpython-311.pyc
